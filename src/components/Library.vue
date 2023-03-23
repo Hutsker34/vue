@@ -2,16 +2,23 @@
     <div>
         <Search @search="showResults" :books="books"/>
         <Books class="books" :books="result" />
+        <Card :card="card"/>
+        <ShoppingCart :ShoppingCart="ShoppingCart"/>
     </div>
 </template>
 <script>
 import Search from './Search.vue'
 import Books from './Books.vue'
+import Card from './sandBox/CreditCardInput'
+import ShoppingCart from './sandBox/ShoppingCart'
+
 export default {
     name: 'Library',
     components: {
         Search,
-        Books
+        Books,
+        Card,
+        ShoppingCart
     },
     data(){
         return {
@@ -21,7 +28,7 @@ export default {
                 {title: 'преступление и наказание', author: 'Достоевский'},
                 {title: 'преступление и наказание', author: 'Достоевский'},
             ],
-            result: []
+            result: [],
         }
     },
     methods: {
